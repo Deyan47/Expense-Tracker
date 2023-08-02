@@ -24,9 +24,17 @@ const App = () => {
     },
   ];
 
+  const addExpenseHandler = (expense) => {
+    const expenseData = {
+      ...expense,
+      id: Math.random().toString(),
+    };
+    console.log(expenseData);
+  };
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );
